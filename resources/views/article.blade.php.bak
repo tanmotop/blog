@@ -1,0 +1,62 @@
+@extends('layouts.blog')
+
+@section('content')
+    <div class="col-md-9">
+        <div class="card">
+            <div class="post-header">
+                <h3>Open Images V4 </h3>
+                <div class="d-flex justify-content-between align-items-center">
+                    <small class="text-muted">
+                        <i class="far fa-calendar"></i> 2018-08-14
+                        |
+                        <i class="far fa-comments fa-fw"></i> 2
+                        |
+                        <i class="far fa-folder"></i> PHP
+                    </small>
+                </div>
+            </div>
+
+            <div class="card-body">
+                <img alt="Thumbnail [100%x225]" style="height: 300px; width: 100%; display: block;" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22348%22%20height%3D%22225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20348%20225%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_16536370ad1%20text%20%7B%20fill%3A%23eceeef%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A17pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_16536370ad1%22%3E%3Crect%20width%3D%22348%22%20height%3D%22225%22%20fill%3D%22%2355595c%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22113.5%22%20y%3D%22120.6%22%3EThumbnail%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true">
+
+                <div class="markdown"><p></p><h1>Slug</h1> <p>Github 地址：<a href="https://github.com/jourdon/slug">https://github.com/jourdon/slug</a> <code>star</code> 点起来好吧。</p> <h2>说明</h2> <p>Slug 整合了百度翻译与有道翻译,你可以选择使用其中一个平台来实现翻译的功能,当然，如果翻译失败的情况下，我们还有备用的方案，可以转换成拼音，目的就是让你的URL 更友好。</p> <p>使用这个安装包的前提是你需要在这两个平台注册并申请应用：</p> <ul><li><a href="http://ai.youdao.com/product-fanyi.s">http://ai.youdao.com/product-fanyi.s</a></li> <li><a href="http://api.fanyi.baidu.com/api/trans/product/prodinfo#0">http://api.fanyi.baidu.com/api/trans/product/prodinfo#0</a></li></ul><p>你需要拿到这两个关键信息:</p> <ol><li>app ID</li> <li>app Secret</li></ol><h2>安装</h2> <p>使用 Composer 安装:</p> <pre class=" language-php"><code class=" language-php">composer <span class="token keyword">require</span> jourdon<span class="token operator">/</span>slug</code></pre> <p>导出配置文件</p> <pre class=" language-php"><code class=" language-php">php artisan vendor<span class="token punctuation">:</span>publish <span class="token operator">--</span>provider<span class="token operator">=</span><span class="token string">"Jourdon\Slug\SlugServiceProvider"</span></code></pre> <p>配置文件内容如下：</p> <pre class=" language-php"><code class=" language-php">
+<span class="token keyword">return</span> <span class="token punctuation">[</span>
+    <span class="token comment" spellcheck="true">//翻译类型只有两种 "baidu", "youdao"</span>
+
+    <span class="token string">'type'</span>  <span class="token operator">=</span><span class="token operator">&gt;</span>  <span class="token function">env</span><span class="token punctuation">(</span><span class="token string">'TRANSLATE_TYPE'</span><span class="token punctuation">,</span><span class="token string">'baidu'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+
+    <span class="token comment" spellcheck="true">//翻译 API 地址</span>
+    <span class="token string">'api'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span>
+        <span class="token string">'baidu'</span> <span class="token operator">=</span><span class="token operator">&gt;</span>  'http<span class="token punctuation">:</span><span class="token comment" spellcheck="true">//api.fanyi.baidu.com/api/trans/vip/translate?',</span>
+        <span class="token string">'youdao'</span><span class="token operator">=</span><span class="token operator">&gt;</span>  'https<span class="token punctuation">:</span><span class="token comment" spellcheck="true">//openapi.youdao.com/api?'</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+
+    <span class="token comment" spellcheck="true">//App id </span>
+    <span class="token string">'translate_appid'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">env</span><span class="token punctuation">(</span><span class="token string">'TRANSLATE_APPID'</span><span class="token punctuation">,</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+
+    <span class="token comment" spellcheck="true">//APP secret </span>
+    <span class="token string">'translate_secret'</span>   <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">env</span><span class="token punctuation">(</span><span class="token string">'TRANSLATE_SECRET'</span><span class="token punctuation">,</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span><span class="token punctuation">;</span></code></pre> <p>接下来，你需要在 <code>.env</code> 文件中添加:</p> <pre class=" language-php"><code class=" language-php"><span class="token constant">TRANSLATE_TYPE</span><span class="token operator">=</span>baidu<span class="token punctuation">.</span>com
+<span class="token constant">TRANSLATE_APPID</span><span class="token operator">=</span>
+<span class="token constant">TRANSLATE_SECRET</span><span class="token operator">=</span></code></pre> <p>将你在平台注册得到的信息添进去即可，<code>TRANSLATE_TYPE</code> 这里是你的注册平台，目前只有 <code>baidu</code> 和 <code>youdao</code>.</p> <blockquote><p><strong>重点</strong>：如果没有导出配置，或者env 文件中配置项没有正确填写，会默认转成拼音</p></blockquote> <p>在 <code>config/app.php</code>的 <code>providers</code>数组中加入</p> <pre><code>\Jourdon\Slug\SlugServiceProvider::class,</code></pre> <p>在 <code>config/app.php</code>的 <code>aliases</code>数组中加入</p> <pre><code>'Slug'  =&gt; \Jourdon\Slug\Slug::class,</code></pre> <blockquote><p>如果你使用的是 <code>laravel 5.5</code> 版本以上，那面上面的两步可以忽略。</p></blockquote> <h2>使用</h2> <pre class=" language-php"><code class=" language-php"><span class="token keyword">use</span> <span class="token package">Slug</span><span class="token punctuation">;</span>
+
+<span class="token scope">Slug<span class="token punctuation">::</span></span><span class="token function">translate</span><span class="token punctuation">(</span><span class="token string">'php是世界上最好的语言'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">//php-is-the-best-language-in-the-world      en</span>
+
+<span class="token comment" spellcheck="true">//php-shi-shi-jie-shang-zui-hao-de-yu-yan   pinyin</span>
+</code></pre> <p></p> <blockquote><p>作者: <a href="https://www.qiehe.net"> Jourdon</a></p> <p>本文地址: <a href="https://www.qiehe.net/posts/5/extended-package-recommendation-slug-making-url-more-friendlyl">https://www.qiehe.net/posts/5/extended-package-recommendation-slug-making-url-more-friendly</a></p> <p>转载请注明出处！</p></blockquote> <p class="text-center"><b>如果觉得我的文章对您有用，请随意打赏。您的支持将鼓励我继续创作！</b> <img src="https://www.qiehe.net/images/zanshang.png" alt="赞赏码" title="如果觉得我的文章对您有用，请随意打赏。你的支持将鼓励我继续创作！" width="300px"></p></div>
+
+                <div class="post-info-panel">
+                    <p class="info">
+                        <label class="info-title">版权声明：</label><i class="fab fa-fw fa-creative-commons"></i>自由转载-非商用-非衍生-保持署名（<a href="https://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh">创意共享3.0许可证</a>）
+                    </p>
+                </div>
+            </div>
+            <div class="post-footer">
+                <i class="fa fa-tags"></i>
+                <a class="mr-2" href="#">资源</a>
+                <a class="mr-2" href="#">Deep Learning</a>
+                <a class="mr-2" href="#">数据集</a></div>
+        </div>
+    </div>
+@endsection
