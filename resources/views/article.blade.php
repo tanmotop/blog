@@ -7,7 +7,7 @@
                 <h3>{{ $article->title }}</h3>
                 <div class="d-flex justify-content-between align-items-center">
                     <small class="text-muted">
-                        <i class="far fa-calendar"></i> {{ $article->created_at }}
+                        <i class="far fa-calendar"></i> {{ optional($article->created_at)->toDateString() }}
                         |
                         <i class="far fa-comments fa-fw"></i> 2
                         |

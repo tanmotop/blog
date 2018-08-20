@@ -35,6 +35,8 @@ namespace App\Http\Controllers;
 
 
 use App\Models\Article;
+use App\Models\Category;
+use App\Models\Tag;
 
 class IndexController extends Controller
 {
@@ -43,12 +45,13 @@ class IndexController extends Controller
      */
     public function index()
     {
-        $articles = Article::published()->paginate(10);
-        return view('index', ['articles' => $articles]);
+        $articles = Article::published()->latest()->paginate(10);
+        $categories = Category::all();
+        $tags = Tag::all();
+        return view('index', compact('articles', 'categories', 'tags'));
     }
 
     public function about()
     {
-
     }
 }

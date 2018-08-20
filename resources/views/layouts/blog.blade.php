@@ -40,7 +40,7 @@
     <div class="navbar-collapse justify-content-md-center collapse" id="main-menu" style="">
         <ul class="navbar-nav">
             <li class="nav-item active">
-                <a class="nav-link" href="#">首页 <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/">首页 <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">PHP</a>

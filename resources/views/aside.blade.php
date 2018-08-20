@@ -42,9 +42,9 @@
 
         <div class="card-body">
             <ul class="list-unstyled mb-0">
-                <li><a href="#">分类1</a></li>
-                <li><a href="#">分类2</a></li>
-                <li><a href="#">分类3</a></li>
+                @foreach($categories as $category)
+                <li><a href="{{ route('categories', $category->id) }}">{{ $category->title }}</a></li>
+                @endforeach
             </ul>
         </div>
     </div>
