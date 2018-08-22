@@ -163,7 +163,7 @@ class ArticleController extends Controller
 
     /**
      * @permission 删除文章
-     *
+     * 
      * @param Article $article
      * @return \Illuminate\Http\JsonResponse
      * @throws \Exception

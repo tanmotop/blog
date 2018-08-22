@@ -19,9 +19,9 @@
                     <small class="text-muted">
                         <i class="far fa-calendar"></i> {{ optional($article->created_at)->toDateString() }}
                         |
-                        <i class="far fa-comments fa-fw"></i> 2
-                        |
-                        <i class="far fa-folder"></i> <a href="{{ route('categories', $article->category_id) }}">{{ $article->category->title }}</a>
+                        {{--<i class="far fa-comments fa-fw"></i> 2--}}
+                        {{--|--}}
+                        <i class="far fa-folder"></i> <a href="{{ route('categories.show', $article->category_id) }}">{{ $article->category->title }}</a>
                     </small>
                 </div>
             </div>
@@ -29,12 +29,17 @@
                 <div class="pull-left">
                     <i class="fa fa-tags"></i>
                     @foreach($article->tags as $tag)
-                    <a class="mr-2" href="{{ route('tags', $tag->id) }}">{{ $tag->name }}</a>
+                    <a class="mr-2" href="{{ route('tags.show', $tag->id) }}">{{ $tag->name }}</a>
                     @endforeach
                 </div>
             </div>
         </article>
         @endforeach
+
+        <nav aria-label="Page navigation example">
+            {{ $articles->links('layouts.pagination') }}
+        </nav>
+
     </div>
 
     @include('aside')

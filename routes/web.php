@@ -11,10 +11,15 @@
 |
 */
 
+Route::group([
+    'middleware' => ['assign_var']
+], function () {
+    Route::get('/', 'IndexController@index')->name('page.index');
+    Route::get('/articles/{article}/{slug}', 'ArticleController@show')->name('articles.show');
+    Route::get('/tags/{tag}/articles', 'TagController@show')->name('tags.show');
+    Route::get('/categories/{category}/articles', 'CategoryController@show')->name('categories.show');
+});
 
-Route::get('/', 'IndexController@index')->name('index');
-Route::get('/about', 'IndexController@about')->name('about');
-
-Route::get('/articles/{article}/{slug}', 'ArticleController@show')->name('articles.show');
-Route::get('/categories/{id}/articles', 'ArticleController@category')->name('categories');
-Route::get('/tags/{id}/articles', 'ArticleController@tag')->name('tags');
+Route::get('/categories', 'CategoryController@index')->name('categories.index');
+Route::get('/tags', 'TagController@index')->name('tags.index');
+Route::get('/about', 'IndexController@about')->name('page.about');

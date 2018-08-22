@@ -42,14 +42,4 @@ class ArticleController extends Controller
     {
         return view('article', compact('article'));
     }
-
-    public function category($id)
-    {
-
-    }
-
-    public function tag($id)
-    {
-
-    }
 }

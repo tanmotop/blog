@@ -2,8 +2,8 @@
 /**
  * Created by PhpStorm.
  * User: Hong
- * Date: 2018/8/13
- * Time: 15:48
+ * Date: 2018/8/21
+ * Time: 18:39
  *
  *                                _oo8oo_
  *                               o8888888o
@@ -34,20 +34,23 @@
 namespace App\Http\Controllers;
 
 
-use App\Models\Article;
+use App\Models\Tag;
 
-class IndexController extends Controller
+class TagController extends Controller
 {
-    /**
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
     public function index()
     {
-        $articles = Article::published()->latest()->paginate(10);
-        return view('index', ['articles' => $articles]);
+
     }
 
-    public function about()
+    /**
+     * @param Tag $tag
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function show(Tag $tag)
     {
+        $articles = $tag->articles()->published()->paginate(10);
+
+        return view('index', compact('articles'));
     }
 }

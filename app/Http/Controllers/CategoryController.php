@@ -2,8 +2,8 @@
 /**
  * Created by PhpStorm.
  * User: Hong
- * Date: 2018/8/13
- * Time: 15:48
+ * Date: 2018/8/21
+ * Time: 18:10
  *
  *                                _oo8oo_
  *                               o8888888o
@@ -34,20 +34,27 @@
 namespace App\Http\Controllers;
 
 
-use App\Models\Article;
+use App\Models\Category;
 
-class IndexController extends Controller
+class CategoryController extends Controller
 {
     /**
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index()
     {
-        $articles = Article::published()->latest()->paginate(10);
-        return view('index', ['articles' => $articles]);
+        $categories = Category::all();
+        return view('categories', compact('categories'));
     }
 
-    public function about()
+    /**
+     * @param Category $category
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function show(Category $category)
     {
+        $articles = $category->articles()->published()->paginate(10);
+
+        return view('index', compact('articles'));
     }
 }

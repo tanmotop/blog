@@ -35,15 +35,29 @@
         </div>
     </div>
 
-    <div class="card">
+    <div class="card mb-4">
         <div class="aside-header">
-            <h4>分类</h4>
+            <h4><a href="{{ route('categories.index') }}">分类</a></h4>
         </div>
 
         <div class="card-body">
             <ul class="list-unstyled mb-0">
                 @foreach($categories as $category)
-                <li><a href="{{ route('categories', $category->id) }}">{{ $category->title }}</a></li>
+                <li><a href="{{ route('categories.show', $category->id) }}">{{ $category->title }}</a></li>
+                @endforeach
+            </ul>
+        </div>
+    </div>
+
+    <div class="card mb-4">
+        <div class="aside-header">
+            <h4><a href="{{ route('tags.index') }}">标签</a></h4>
+        </div>
+
+        <div class="card-body">
+            <ul class="tags bg-white shadow rounded">
+                @foreach($tags as $tag)
+                    <li><a class="tag" href="{{ route('tags.show', $tag->id) }}">{{ $tag->name }}</a></li>
                 @endforeach
             </ul>
         </div>
