@@ -40,6 +40,7 @@ use App\Models\Category;
 use App\Models\Tag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
+use Jourdon\Slug\Slug;
 
 /**
  * @module 文章管理
@@ -103,7 +104,7 @@ class ArticleController extends Controller
         $article->title = $request->title;
         $article->description = $request->description;
         $article->type = $request->type;
-        $article->slug = Carbon::now();
+        $article->slug = Slug::translate($request->title);
         $article->content = $request->content;
         $article->html_content = $this->parsedownExtra->text($request->content);
         $article->source = $request->source;
@@ -145,7 +146,7 @@ class ArticleController extends Controller
         $article->title = $request->title;
         $article->description = $request->description;
         $article->type = $request->type;
-        $article->slug = Carbon::now();
+        $article->slug = Slug::translate($request->title);
         $article->content = $request->content;
         $article->html_content = $this->parsedownExtra->text($request->content);
         $article->source = $request->source;

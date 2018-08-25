@@ -38,9 +38,13 @@ use App\Models\Tag;
 
 class TagController extends Controller
 {
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function index()
     {
-
+        $tags = Tag::latest()->get();
+        return view('tags', compact('tags'));
     }
 
     /**
@@ -49,7 +53,7 @@ class TagController extends Controller
      */
     public function show(Tag $tag)
     {
-        $articles = $tag->articles()->published()->paginate(10);
+        $articles = $tag->articles()->published()->latest()->paginate(10);
 
         return view('index', compact('articles'));
     }

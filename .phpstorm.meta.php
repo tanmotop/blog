@@ -3,7 +3,7 @@ namespace PHPSTORM_META {
 
    /**
     * PhpStorm Meta file, to provide autocomplete information for PhpStorm
-    * Generated on 2018-08-20 02:58:37.
+    * Generated on 2018-08-25 04:00:57.
     *
     * @author Barry vd. Heuvel <barryvdh@gmail.com>
     * @see https://github.com/barryvdh/laravel-ide-helper
@@ -139,6 +139,7 @@ namespace PHPSTORM_META {
         'translation.loader' => \Illuminate\Translation\FileLoader::class,
         'translator' => \Illuminate\Translation\Translator::class,
         'validation.presence' => \Illuminate\Validation\DatabasePresenceVerifier::class,
+        'Slug' => \Jourdon\Slug\SlugTranslate::class,
         'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
         'NunoMaduro\Collision\Contracts\Adapters\Phpunit\Listener' => \NunoMaduro\Collision\Adapters\Phpunit\Listener::class,
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
@@ -274,6 +275,7 @@ namespace PHPSTORM_META {
         'translation.loader' => \Illuminate\Translation\FileLoader::class,
         'translator' => \Illuminate\Translation\Translator::class,
         'validation.presence' => \Illuminate\Validation\DatabasePresenceVerifier::class,
+        'Slug' => \Jourdon\Slug\SlugTranslate::class,
         'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
         'NunoMaduro\Collision\Contracts\Adapters\Phpunit\Listener' => \NunoMaduro\Collision\Adapters\Phpunit\Listener::class,
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
@@ -409,6 +411,7 @@ namespace PHPSTORM_META {
         'translation.loader' => \Illuminate\Translation\FileLoader::class,
         'translator' => \Illuminate\Translation\Translator::class,
         'validation.presence' => \Illuminate\Validation\DatabasePresenceVerifier::class,
+        'Slug' => \Jourdon\Slug\SlugTranslate::class,
         'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
         'NunoMaduro\Collision\Contracts\Adapters\Phpunit\Listener' => \NunoMaduro\Collision\Adapters\Phpunit\Listener::class,
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
@@ -544,6 +547,7 @@ namespace PHPSTORM_META {
         'translation.loader' => \Illuminate\Translation\FileLoader::class,
         'translator' => \Illuminate\Translation\Translator::class,
         'validation.presence' => \Illuminate\Validation\DatabasePresenceVerifier::class,
+        'Slug' => \Jourdon\Slug\SlugTranslate::class,
         'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
         'NunoMaduro\Collision\Contracts\Adapters\Phpunit\Listener' => \NunoMaduro\Collision\Adapters\Phpunit\Listener::class,
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
@@ -679,6 +683,7 @@ namespace PHPSTORM_META {
         'translation.loader' => \Illuminate\Translation\FileLoader::class,
         'translator' => \Illuminate\Translation\Translator::class,
         'validation.presence' => \Illuminate\Validation\DatabasePresenceVerifier::class,
+        'Slug' => \Jourdon\Slug\SlugTranslate::class,
         'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
         'NunoMaduro\Collision\Contracts\Adapters\Phpunit\Listener' => \NunoMaduro\Collision\Adapters\Phpunit\Listener::class,
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
@@ -814,6 +819,7 @@ namespace PHPSTORM_META {
         'translation.loader' => \Illuminate\Translation\FileLoader::class,
         'translator' => \Illuminate\Translation\Translator::class,
         'validation.presence' => \Illuminate\Validation\DatabasePresenceVerifier::class,
+        'Slug' => \Jourdon\Slug\SlugTranslate::class,
         'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
         'NunoMaduro\Collision\Contracts\Adapters\Phpunit\Listener' => \NunoMaduro\Collision\Adapters\Phpunit\Listener::class,
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
@@ -949,6 +955,7 @@ namespace PHPSTORM_META {
         'translation.loader' => \Illuminate\Translation\FileLoader::class,
         'translator' => \Illuminate\Translation\Translator::class,
         'validation.presence' => \Illuminate\Validation\DatabasePresenceVerifier::class,
+        'Slug' => \Jourdon\Slug\SlugTranslate::class,
         'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
         'NunoMaduro\Collision\Contracts\Adapters\Phpunit\Listener' => \NunoMaduro\Collision\Adapters\Phpunit\Listener::class,
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,

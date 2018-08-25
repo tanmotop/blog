@@ -36,7 +36,7 @@
             <div class="post-footer">
                 <i class="fa fa-tags"></i>
                 @foreach($article->tags as $tag)
-                <a class="mr-2" href="{{ route('tags', $tag->id) }}">{{ $tag->name }}</a>
+                <a class="mr-2" href="{{ route('tags.index', $tag->id) }}">{{ $tag->name }}</a>
                 @endforeach
         </div>
     </div>

@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.6.33 on 2018-08-20 02:58:34.
+ * Generated for Laravel 5.6.33 on 2018-08-25 04:00:54.
  *
  * This file should not be included in your code, only analyzed by your IDE!
  *
@@ -12511,6 +12511,24 @@ namespace Illuminate\Support\Facades {
  
 }
 
+namespace Jourdon\Slug { 
+
+    class Slug {
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function translate($text)
+        {
+            return \Jourdon\Slug\SlugTranslate::translate($text);
+        }
+         
+    }
+ 
+}
+
 namespace Tanmo\Admin\Facades { 
 
     class Admin {
@@ -14949,6 +14967,8 @@ namespace  {
     class Validator extends \Illuminate\Support\Facades\Validator {}
 
     class View extends \Illuminate\Support\Facades\View {}
+
+    class Slug extends \Jourdon\Slug\Slug {}
 
     class Admin extends \Tanmo\Admin\Facades\Admin {}
 
