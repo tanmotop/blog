@@ -28,6 +28,7 @@
                             <th>分类</th>
                             <th>创建时间</th>
                             <th>更新时间</th>
+                            <th>发布状态</th>
                             <th>操作</th>
                         </tr>
                         @foreach($articles as $article)
@@ -37,6 +38,17 @@
                                 <td>{{ $article->category->title }}</td>
                                 <td>{{ $article->created_at }}</td>
                                 <td>{{ $article->updated_at }}</td>
+                                <td>
+                                    @if($article->status == 0)
+                                        <form action="{{ route('admin::articles.publish', $article->id) }}" method="post">
+                                            {{ csrf_field() }}
+                                            {{ method_field('PUT') }}
+                                            <button type="submit" class="btn btn-primary btn-sm" data-content="{{ $article->id }}">发布</button>
+                                        </form>
+                                        @else
+                                        <button class="btn btn-primary btn-sm disabled">已发布</button>
+                                    @endif
+                                </td>
                                 <td>
                                     <a href="{{ route('admin::articles.edit', $article->id) }}">
                                         <i class="fa fa-edit"></i>

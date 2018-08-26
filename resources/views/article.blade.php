@@ -1,7 +1,7 @@
 @extends('layouts.blog')
 
 @section('content')
-    <div class="col-md-9">
+    <div class="col-md-8">
         <div class="card">
             <div class="post-header">
                 <h3>{{ $article->title }}</h3>
@@ -38,6 +38,9 @@
                 @foreach($article->tags as $tag)
                 <a class="mr-2" href="{{ route('tags.index', $tag->id) }}">{{ $tag->name }}</a>
                 @endforeach
+            </div>
         </div>
     </div>
+
+    @include('aside')
 @endsection
